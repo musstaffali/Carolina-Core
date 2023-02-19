@@ -1,32 +1,21 @@
-export default function Index() {
+import ListOfItems from "~/ui/Layouts/ListOfItems";
+import NavList from "~/ui/Layouts/NavList";
+
+
+
+export default function HomePage( ) {
+  
+  const links = [
+    {label:  'home', to: '/'},
+    {label:  'about', to: '/about'},
+  ]
+
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
+    <article className="prose prose-xl">
+      <h1>Welcome to Home Page</h1>
+      <p>This is the  HomePage</p>
+      <NavList links={links} />
+      <ListOfItems title="List of Houses" itemName="House" />
+    </article>
   );
 }
